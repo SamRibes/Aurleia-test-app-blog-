@@ -1,0 +1,16 @@
+<template>
+  <div class="card mb-4" repeat.for="post of posts">
+    <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+    <div class="card-body">
+      <h2 class="card-title"> ${post.title} </h2>
+      <p class="card-text">${post.body}</p>
+      <a route-href="route: post-view; params.bind: {slug: post.slug}" class="btn btn-primary">Read More &raquo;</a>
+    </div>
+    <div class="card-footer text-muted">
+      Created at ${post.createdAt}
+      <a href="" repeat.for="tag of post.tags">
+        <span class="badge badge-pill badge-info">${tag}</span>
+      </a>
+    </div>
+  </div>
+</template>
